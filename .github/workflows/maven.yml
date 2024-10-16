@@ -51,7 +51,7 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: gubscruz/{exercicio4-zambom}:${{ github.sha }}
+        tags: gubscruz/{exercicio4-zambom-campeonato}:${{ github.sha }}
 
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@master
@@ -63,4 +63,4 @@ jobs:
         script: |
           docker stop exercicio4-zambom
           docker rm --force exercicio4-zambom
-          docker run -d -p 8085:8085 --network=rede --name exercicio4-zambom gubscruz/exercicio4-zambom:${{ github.sha }}
+          docker run -d -p 8085:8085 --network=rede --name exercicio4-zambom gubscruz/exercicio4-zambom-campeonato:${{ github.sha }}
